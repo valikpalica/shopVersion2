@@ -1,0 +1,11 @@
+{
+    "db":{
+        "name":"shop",
+        "host":"localhost",
+        "password":"1111",
+        "user":"root"
+    },
+    "app_config":{
+        "port":8080
+    }
+}
