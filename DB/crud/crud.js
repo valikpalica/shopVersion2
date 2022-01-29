@@ -74,7 +74,7 @@ class CRUD {
                         reject(`Goods class method setorder create Basket error ${e}`);
                     })
                 });
-                resolve(customer_id);
+                resolve({customer_id});
             }
             else{
                 Customer.destroy({where:{
