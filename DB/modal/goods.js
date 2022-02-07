@@ -27,6 +27,10 @@ const Goods = sequlize.define('goods',{
     disconts:{
         type:Sequelize.INTEGER,
         allowNull:true
+    },
+    imageSrc:{
+        type:Sequelize.STRING,
+        allowNull:true,
     }
 });
 
