@@ -27,6 +27,11 @@ const customer = sequlize.define('customer',{
     location:{
         type:Sequelize.STRING,
         allowNull:false
+    },
+    status:{
+        type:Sequelize.BOOLEAN,
+        allowNull:false,
+        defaultValue:false,
     }
 });
 

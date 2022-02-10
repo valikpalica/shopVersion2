@@ -57,14 +57,17 @@ class CRUD {
             location
         }).then(data=>{
             return data.id_customer
-        }).then(customer_id=>{
+        }).then((customer_id)=>{
             if(packages.length>0){
-                packages.forEach(element => {
+                let index = 0;
+                for(let i = 0;i<packages.length;i++){
                     Basket.create({
-                        goods_id:element.goods_id,
-                        count_goods:element.count_goods,
+                        goods_id:packages[i].goods_id,
+                        count_goods:packages[i].count_goods,
                         customer_id
                     }).then(data=>{
+                        index++;
+                        if(index===packages.length) resolve({customer_id});
                     }).catch(e=>{
                         Customer.destroy({where:{
                             id_customer:customer_id
@@ -73,8 +76,7 @@ class CRUD {
                         });
                         reject(`Goods class method setorder create Basket error ${e}`);
                     })
-                });
-                resolve({customer_id});
+                }
             }
             else{
                 Customer.destroy({where:{

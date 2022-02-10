@@ -24,10 +24,9 @@ try {
         startDB().then(res=>{
             console.log(`App started with status ${res}`);
         }).catch(e=>{
-            throw Error(`Error with App ${e}`);
+           throw Error(`Error with App ${e}`);
         })
     });
 } catch (error) {
-    console.error(error);
     process.kill(process.pid, 'SIGTERM')
 }
